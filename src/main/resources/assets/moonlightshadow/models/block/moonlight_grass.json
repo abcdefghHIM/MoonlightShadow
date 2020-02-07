@@ -1,0 +1,9 @@
+{
+    "parent": "moonlightshadow:block/grass",
+    "textures": {
+        "particle": "moonlightshadow:blocks/dirt",
+        "bottom": "moonlightshadow:blocks/dirt",
+        "top": "moonlightshadow:blocks/grass_top",
+        "side": "moonlightshadow:blocks/grass_side"
+    }
+}

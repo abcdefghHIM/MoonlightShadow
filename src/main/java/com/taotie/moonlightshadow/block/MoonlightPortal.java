@@ -14,11 +14,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
-public class MoonLightPortal extends Block {
+public class MoonlightPortal extends Block {
 
-	public MoonLightPortal() {
+	public MoonlightPortal() {
 		super(Material.PORTAL);
-		this.setUnlocalizedName("MoonLightPortal");
+		this.setUnlocalizedName("MoonlightPortal");
 		this.setRegistryName("moonlightportal");
 	}
 

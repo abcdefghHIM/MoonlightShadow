@@ -1,6 +1,6 @@
 package com.taotie.moonlightshadow.world;
 
-import com.taotie.moonlightshadow.block.MoonLightPortal;
+import com.taotie.moonlightshadow.block.MoonlightPortal;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.math.Vec3d;
@@ -10,7 +10,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 
 public class MoonlightWorldProvider extends WorldProvider {
 	public static final int MoonlightWorldID = 55;
-	public static final Block portal = new MoonLightPortal();
+	public static final Block portal = new MoonlightPortal();
 
 	public MoonlightWorldProvider() {
 	}
