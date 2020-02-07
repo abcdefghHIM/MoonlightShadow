@@ -2,6 +2,8 @@ package com.taotie.moonlightshadow.block;
 
 import java.util.Random;
 
+import com.taotie.moonlightshadow.creativetab.CreativeTabsLoader;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.IGrowable;
@@ -19,6 +21,7 @@ public class MoonlightGrass extends Block implements IGrowable {
 		super(Material.GLASS);
 		this.setRegistryName("moonlight_grass");
 		this.setUnlocalizedName("MoonlightGrass");
+		this.setCreativeTab(CreativeTabsLoader.moonlightBlock);
 	}
 
 	@Override

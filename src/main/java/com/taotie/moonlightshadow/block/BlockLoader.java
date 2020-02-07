@@ -11,18 +11,18 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockLoader {
-	public static Block MoonlightPortal = new MoonlightPortal();
-	public static Block MoonlightGlass = new MoonlightGrass();
 
 	public BlockLoader(FMLPreInitializationEvent event) {
-		register(MoonlightPortal);
-		register(MoonlightGlass);
+		for (EBlock block : EBlock.values()) {
+			register(block.getBlock());
+		}
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static void registerRenders() {
-		registerRender(MoonlightPortal);
-		registerRender(MoonlightGlass);
+		for (EBlock block : EBlock.values()) {
+			registerRender(block.getBlock());
+		}
 	}
 
 	private static void register(Block block) {

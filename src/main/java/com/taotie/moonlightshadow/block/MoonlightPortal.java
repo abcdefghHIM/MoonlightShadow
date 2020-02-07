@@ -1,5 +1,6 @@
 package com.taotie.moonlightshadow.block;
 
+import com.taotie.moonlightshadow.creativetab.CreativeTabsLoader;
 import com.taotie.moonlightshadow.world.MoonlightWorldProvider;
 import com.taotie.moonlightshadow.world.WorldTeleporter;
 
@@ -20,6 +21,7 @@ public class MoonlightPortal extends Block {
 		super(Material.PORTAL);
 		this.setUnlocalizedName("MoonlightPortal");
 		this.setRegistryName("moonlightportal");
+		this.setCreativeTab(CreativeTabsLoader.moonlightBlock);
 	}
 
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
