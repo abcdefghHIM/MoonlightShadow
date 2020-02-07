@@ -11,11 +11,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockLoader {
+	public static Block MoonLightPortal = new MoonLightPortal();
+
 	public BlockLoader(FMLPreInitializationEvent event) {
+		register(MoonLightPortal);
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static void registerRenders() {
+		registerRender(MoonLightPortal);
 	}
 
 	private static void register(Block block) {
