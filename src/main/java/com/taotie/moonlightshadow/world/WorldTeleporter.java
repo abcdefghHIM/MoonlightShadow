@@ -18,6 +18,7 @@ public class WorldTeleporter extends Teleporter {
 		world = worldIn;
 	}
 
+	@Override
 	public void placeInPortal(Entity entityIn, float rotationYaw) {
 		if (world.provider.getDimension() != MoonlightWorldProvider.MoonlightWorldID
 				&& (entityIn instanceof EntityPlayer)) {
