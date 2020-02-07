@@ -22,7 +22,7 @@ public class MoonlightWorldProvider extends WorldProvider {
 
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new MoonlightChunkGenerator(world);
+		return new MoonlightChunkGenerator(world, world.getSeed());
 	}
 
 	@Override

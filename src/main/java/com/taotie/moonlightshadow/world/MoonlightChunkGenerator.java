@@ -1,6 +1,7 @@
 package com.taotie.moonlightshadow.world;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.math.BlockPos;
@@ -10,28 +11,42 @@ import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 public class MoonlightChunkGenerator implements IChunkGenerator {
 	private final World world;
+	private final Random rand;
+	private NoiseGeneratorOctaves noiseGeneratorOctaves;
+	double[] genBuff;
 
-	public MoonlightChunkGenerator(World world) {
+	public MoonlightChunkGenerator(World world, long seed) {
 		this.world = world;
+		this.rand = new Random(seed);
+		this.noiseGeneratorOctaves = new NoiseGeneratorOctaves(this.rand, 16);
+		this.genBuff = new double[16*16];
 	}
 
 	@Override
 	public Chunk generateChunk(int x, int z) {
+		this.rand.setSeed((long)x * 341873128712L + (long)z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
-		Chunk chunk = new Chunk(world, chunkprimer, x, z);
-		chunk.generateSkylightMap();
-		byte abyte[] = chunk.getBiomeArray();
-		for (int i1 = 0; i1 < abyte.length; i1++)
-			abyte[i1] = (byte) Biome.getIdForBiome(Biome.getBiome(1));
+		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
+		byte[] abyte = chunk.getBiomeArray();
+
+		for (int i = 0; i < abyte.length; ++i) {
+			abyte[i] = (byte) Biome.getIdForBiome(Biome.getBiome(i));
+		}
+
 		chunk.generateSkylightMap();
 		return chunk;
 	}
 
 	@Override
 	public void populate(int x, int z) {
+		this.genBuff = this.noiseGeneratorOctaves.generateNoiseOctaves(this.genBuff,x*16,0,z*16, 16, 1,16, 1000, 8000, 1000);
+		for(double d:genBuff){
+		
+		}
 	}
 
 	@Override
