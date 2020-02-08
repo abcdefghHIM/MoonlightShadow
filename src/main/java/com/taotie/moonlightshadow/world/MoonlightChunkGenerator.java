@@ -43,10 +43,6 @@ public class MoonlightChunkGenerator implements IChunkGenerator {
 
 	@Override
 	public void populate(int x, int z) {
-		this.genBuff = this.noiseGeneratorOctaves.generateNoiseOctaves(this.genBuff,x*16,0,z*16, 16, 1,16, 1000, 8000, 1000);
-		for(double d:genBuff){
-		
-		}
 	}
 
 	@Override
