@@ -8,6 +8,6 @@ public class Entity_KaoGeGuGuGu extends EntityMember {
 
 	public Entity_KaoGeGuGuGu(World worldIn) {
 		super(worldIn);
+		this.experienceValue = 0;
 	}
-
 }

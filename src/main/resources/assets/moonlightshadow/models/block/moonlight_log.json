@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "moonlightshadow:blocks/log_moonlight_top",
+        "side": "moonlightshadow:blocks/log_moonlight"
+    }
+}
