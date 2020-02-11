@@ -3,6 +3,7 @@ package com.taotie.moonlightshadow.util;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import com.taotie.moonlightshadow.block.EBlock;
 
 public enum EOreDictionary {
 	;
