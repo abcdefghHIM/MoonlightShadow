@@ -4,6 +4,7 @@ import com.taotie.moonlightshadow.block.BlockLoader;
 import com.taotie.moonlightshadow.creativetab.CreativeTabsLoader;
 import com.taotie.moonlightshadow.entity.EntityLoader;
 import com.taotie.moonlightshadow.item.ItemLoader;
+import com.taotie.moonlightshadow.util.OreDictionaryLoader;
 import com.taotie.moonlightshadow.world.WorldLoader;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,6 +18,7 @@ public class CommonProxy {
 		new BlockLoader(event);
 		new WorldLoader();
 		new EntityLoader();
+		new OreDictionaryLoader();
 	}
 
 	public void init(FMLInitializationEvent event) {

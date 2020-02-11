@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "moonlightshadow:blocks/moonlight_sapling"
+        "cross": "moonlightshadow:blocks/sapling_moonlight"
     }
 }

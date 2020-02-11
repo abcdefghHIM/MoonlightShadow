@@ -1,5 +1,6 @@
 package com.taotie.moonlightshadow.block;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -8,7 +9,7 @@ import javax.annotation.Nullable;
 import com.taotie.moonlightshadow.creativetab.CreativeTabsLoader;
 
 import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
@@ -21,6 +22,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class MoonlightLeaves extends BlockLeaves {
@@ -55,7 +57,12 @@ public class MoonlightLeaves extends BlockLeaves {
 	}
 
 	@Override
-	public BlockPlanks.EnumType getWoodType(int meta) {
+	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+		return NonNullList.withSize(1, new ItemStack(this));
+	}
+
+	@Override
+	public EnumType getWoodType(int meta) {
 		return null;
 	}
 
@@ -84,13 +91,12 @@ public class MoonlightLeaves extends BlockLeaves {
 	}
 
 	@Override
-	public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos,
-			int fortune) {
-		return NonNullList.withSize(1, new ItemStack(this));
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
 
 	@Override
-	public BlockRenderLayer getBlockLayer() {
-		return BlockRenderLayer.CUTOUT_MIPPED;
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
 	}
 }

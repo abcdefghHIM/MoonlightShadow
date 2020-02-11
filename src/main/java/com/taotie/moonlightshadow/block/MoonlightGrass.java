@@ -21,6 +21,7 @@ public class MoonlightGrass extends Block implements IGrowable {
 		super(Material.GLASS);
 		this.setRegistryName("moonlight_grass");
 		this.setUnlocalizedName("MoonlightGrass");
+		this.setLightLevel(1.0F);
 		this.setCreativeTab(CreativeTabsLoader.moonlightBlock);
 	}
 

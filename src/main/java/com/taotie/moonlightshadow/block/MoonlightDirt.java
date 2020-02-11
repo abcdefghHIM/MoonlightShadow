@@ -10,6 +10,7 @@ public class MoonlightDirt extends Block{
 		super(Material.GROUND);
 		this.setRegistryName("moonlight_dirt");
 		this.setUnlocalizedName("MoonlightDirt");
+		this.setLightLevel(1.0F);
 		this.setCreativeTab(CreativeTabsLoader.moonlightBlock);
 	}
 }
