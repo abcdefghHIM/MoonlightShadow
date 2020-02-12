@@ -23,6 +23,7 @@ public class MoonlightSapling extends BlockBush implements IGrowable {
 	public MoonlightSapling() {
 		this.setRegistryName("moonlight_sapling");
 		this.setUnlocalizedName("MoonlightSapling");
+		this.setLightLevel(1.0F);
 		this.setCreativeTab(CreativeTabsLoader.moonlightBlock);
 	}
 
